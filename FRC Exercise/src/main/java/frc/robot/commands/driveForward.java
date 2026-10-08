@@ -13,7 +13,7 @@ public class driveForward extends Command {
   private final XRPDrivetrain m_subsystem;
 
 
-    private final double m_distance;
+    private final double m_distance = 61;
     private final double m_speed = 0.5;
 
 
@@ -54,6 +54,6 @@ public class driveForward extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return Math.abs(m_subsystem.)
+    return Math.abs(getAverageDistanceInch())>= m_distance;
   }
 }
