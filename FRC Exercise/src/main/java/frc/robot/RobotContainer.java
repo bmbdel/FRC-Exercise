@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.commands.driveForward;
 import frc.robot.subsystems.XRPDrivetrain;
@@ -20,7 +21,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final XRPDrivetrain m_xrpDrivetrain = new XRPDrivetrain();
 
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_xrpDrivetrain);
+  private final driveForward m_autoCommand = new driveForward(m_xrpDrivetrain, 60);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -42,8 +43,8 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    // An ExampleCommand will run in autonomous
-    
+    // driveForward will run in autonomous
+    // m_chooser.setDefaultOption("Auto Routine Distance", new driveForward(m_xrpDrivetrain, 0);
     return m_autoCommand;
   }
 }
